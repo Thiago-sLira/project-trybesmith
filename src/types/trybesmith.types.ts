@@ -1,7 +1,7 @@
 export type Product = {
   id?: number,
   name: string,
-  amount: number,
+  amount: string,
   orderId?: number,
 };
 
