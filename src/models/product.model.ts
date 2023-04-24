@@ -1,14 +1,18 @@
-import { RowDataPacket } from 'mysql2';
+import { ResultSetHeader } from 'mysql2';
 import connection from './connection';
 import { Product } from '../types/trybesmith.types';
 
-async function registerNewProduct(newProduct: Product): Promise<Product[]> {
-  const [rows] = await connection.execute<RowDataPacket[]>(
-    'INSERT INTO Trybesmith.products (`name`, `amount`) VALUES (?, ?)',
-    [newProduct.name, newProduct.amount],
-  );
+async function registerNewProduct(newProduct: Product): Promise<Product> {
+  const { name, amount } = newProduct;
 
-  console.log(rows);
+  const [result] = await connection.execute<ResultSetHeader>(
+    'INSERT INTO Trybesmith.products (`name`, `amount`) VALUES (?, ?)',
+    [name, amount],
+  );
+  const { insertId: id } = result;
+
+  const newProductCreated: Product = { id, name, amount };
+  return newProductCreated;
 }
 
 export default {
