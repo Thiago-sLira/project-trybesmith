@@ -8,6 +8,12 @@ async function registerNewProduct(req: Request, res: Response) {
   res.status(statusCodes.CREATED).json(productRegistered);
 }
 
+async function getAllProducts(_req: Request, res: Response) {
+  const allProducts = await productsService.getAllProducts();
+  res.status(statusCodes.OK).json(allProducts);
+}
+
 export default {
   registerNewProduct,
+  getAllProducts,
 };

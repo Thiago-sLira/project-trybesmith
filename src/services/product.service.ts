@@ -7,6 +7,12 @@ async function registerNewProduct(newProduct: Product): Promise<Product> {
   return productRegistered;
 }
 
+async function getAllProducts() {
+  const allProducts = await productsModel.getAllProducts();
+  return allProducts;
+}
+
 export default {
   registerNewProduct,
+  getAllProducts,
 };
