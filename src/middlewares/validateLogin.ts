@@ -5,11 +5,11 @@ export default function validateLogin(req: Request, res: Response, next: NextFun
   const { username, password } = req.body;
 
   if (!username || typeof username !== 'string') {
-    res.status(statusCodes.BAD_REQUEST).json({ message: '"username" is required' });
+    return res.status(statusCodes.BAD_REQUEST).json({ message: '"username" is required' });
   }
 
   if (!password || typeof password !== 'string') {
-    res.status(statusCodes.BAD_REQUEST).json({ message: '"password" is required' });
+    return res.status(statusCodes.BAD_REQUEST).json({ message: '"password" is required' });
   }
 
   return next();
