@@ -7,6 +7,7 @@ export default function createTokenJWT(payload: User) {
     algorithm: 'HS256',
   };
 
+  // const secret = process.env.JWT_SECRET || 'algumacoisa';
   const secret = 'process.env.JWT_SECRET';
 
   const token = jwt.sign(payload, secret, config);

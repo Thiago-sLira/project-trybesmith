@@ -21,5 +21,10 @@ export type Order = {
 export type AllOrders = {
   id: number,
   userId: number,
-  productsIds: number[]
+  productsIds: number[],
+};
+
+export type Login = {
+  username: string,
+  password: string,
 };

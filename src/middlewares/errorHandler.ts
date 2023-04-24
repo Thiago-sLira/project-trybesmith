@@ -5,11 +5,11 @@ const errorHandler: ErrorRequestHandler = (err: unknown, _req, res, _next) => {
   if (err instanceof Error) {
     switch (err.message) {
       case 'Unauthorized':
-        res.status(statusCodes.UNAUTHORIZED).json({ message: 'Email e/ou senha inválidos' });
+        res.status(statusCodes.UNAUTHORIZED).json({ message: 'Username or password invalid' });
         break;
-      case 'NotFoundError':
-        res.status(statusCodes.NOT_FOUND).json({ message: 'Usuário não encontrado' });
-        break;
+      // case 'NotFoundError':
+      //   res.status(statusCodes.NOT_FOUND).json({ message: 'Usuário não encontrado' });
+      //   break;
       default:
         console.error(err);
         res.sendStatus(500);
