@@ -6,7 +6,7 @@ export type Product = {
 };
 
 export type User = {
-  id: number,
+  id?: number,
   username: string,
   vocation: string,
   level: number,
@@ -14,6 +14,6 @@ export type User = {
 };
 
 export type Order = {
-  id: number,
+  id?: number,
   userId: number,
 };
