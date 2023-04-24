@@ -17,3 +17,9 @@ export type Order = {
   id?: number,
   userId: number,
 };
+
+export type AllOrders = {
+  id: number,
+  userId: number,
+  productsIds: number[]
+};
