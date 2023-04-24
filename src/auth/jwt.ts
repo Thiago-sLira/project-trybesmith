@@ -1,7 +1,7 @@
 import jwt, { SignOptions } from 'jsonwebtoken';
-import { User } from '../types/trybesmith.types';
+import { User, UserLogin } from '../types/trybesmith.types';
 
-export default function createTokenJWT(payload: User) {
+export default function createTokenJWT(payload: User | UserLogin) {
   const config: SignOptions = {
     expiresIn: '3d',
     algorithm: 'HS256',
