@@ -9,8 +9,15 @@ async function getAllOrders() {
   return allProductsCamelized;
 }
 
-async function registerNewOrder(id, ordersToRegister) {
-  
+async function registerNewOrder(id: number, productsIds: number[]) {
+  await ordersModel.registerNewOrder(id, productsIds);
+
+  const ordersRegistered = {
+    userId: id,
+    productsIds,
+  };
+
+  return ordersRegistered;
 }
 
 export default {

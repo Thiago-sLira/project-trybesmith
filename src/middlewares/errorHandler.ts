@@ -13,7 +13,7 @@ const errorHandler: ErrorRequestHandler = (err: Error, _req, res, _next) => {
   }
 
   if (err instanceof JsonWebTokenError) {
-    return res.status(401).json({ message: 'Expired or invalid token' });
+    return res.status(401).json({ message: 'Invalid token' });
   }
 
   console.log(err);

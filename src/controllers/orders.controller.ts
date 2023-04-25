@@ -8,10 +8,10 @@ async function getAllOrders(_req: Request, res: Response) {
 }
 
 async function registerNewOrder(req: Request & { user?: number }, res: Response) {
-  const ordersToRegister = req.body;
+  const { productsIds } = req.body;
   const id = req.user || 0;
 
-  const ordersRegistered = await ordersService.registerNewOrder(id, ordersToRegister);
+  const ordersRegistered = await ordersService.registerNewOrder(id, productsIds);
   res.status(statusCodes.OK).json(ordersRegistered);
 }
 
