@@ -5,13 +5,16 @@ import statusCodes from '../statusCodes';
 
 const validateNewOrderBody = (productBody: Product) => (
   Joi.object({
-    productsIds: Joi.array().items(Joi.number().required()).required(),
+    productsIds: Joi.array().items(Joi.number().required()).required().messages({
+      'array.includesRequiredUnknowns': '"productsIds" must include only numbers',
+      'number.base': '"productsIds" must include only numbers',
+    }),
   }).validate(productBody)
 );
 
-console.log(Joi.object({
-  productsIds: Joi.array().items(Joi.number().required()).required(),
-}).validate({ productsIds: null }).error);
+// console.log(Joi.object({
+//   productsIds: Joi.array().items(Joi.number().required()).required(),
+// }).validate({ productsIds: null }).error);
 
 export default (req: Request, res: Response, next: NextFunction) => {
   const orderBody = req.body;
@@ -20,8 +23,8 @@ export default (req: Request, res: Response, next: NextFunction) => {
   if (error) {
     const codeResponse = error.details[0].type === 'array.base'
       || error.details[0].type === 'array.includesRequiredUnknowns'
-      ? statusCodes.BAD_REQUEST
-      : statusCodes.UNPROCESSABLE_ENTITY;
+      ? statusCodes.UNPROCESSABLE_ENTITY
+      : statusCodes.BAD_REQUEST;
     return res.status(codeResponse).json({ message: error.message });
   }
 

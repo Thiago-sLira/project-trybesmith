@@ -12,7 +12,7 @@ async function registerNewOrder(req: Request & { user?: number }, res: Response)
   const id = req.user || 0;
 
   const ordersRegistered = await ordersService.registerNewOrder(id, productsIds);
-  res.status(statusCodes.OK).json(ordersRegistered);
+  res.status(statusCodes.CREATED).json(ordersRegistered);
 }
 
 export default {

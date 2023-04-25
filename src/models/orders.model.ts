@@ -29,7 +29,7 @@ async function registerNewOrder(id: number, productsIds: number[]) {
 
   const promises = productsIds.map((productId) => (
     connection.execute<ResultSetHeader>(
-      'UPDATE Trybesmith.products SET VALUES(?) WHERE id = ?',
+      'UPDATE Trybesmith.products SET order_id = ? WHERE id = ?',
       [insertId, productId],
     )
   ));
