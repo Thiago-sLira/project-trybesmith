@@ -25,9 +25,9 @@ const validateNewUserBody = (userBody: User) => (
 );
 
 export default (req: Request, res: Response, next: NextFunction) => {
-  const { username, vocation, level, password } = req.body;
+  const userBody = req.body;
 
-  const { error } = validateNewUserBody({ username, vocation, level, password });
+  const { error } = validateNewUserBody(userBody);
   if (error) {
     const codeResponse = error.message.includes('required')
       ? statusCodes.BAD_REQUEST
