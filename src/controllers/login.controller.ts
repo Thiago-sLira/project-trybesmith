@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import statusCodes from '../statusCodes';
 import loginService from '../services/login.service';
+import statusCodes from '../utils/statusCodes';
 
 async function userLogin(req: Request, res: Response) {
   const loginData = req.body;

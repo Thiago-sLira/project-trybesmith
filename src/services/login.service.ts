@@ -1,7 +1,7 @@
-import { createTokenJWT } from '../auth/jwt';
-import ErrorLaunch from '../controllers/utils/ErrorLaunch';
 import loginModel from '../models/login.model';
 import { Login } from '../types/trybesmith.types';
+import ErrorLaunch from '../utils/ErrorLaunch';
+import { createTokenJWT } from '../utils/auth/jwt';
 
 async function userLogin(loginData: Login): Promise<string> {
   const userData = await loginModel.userLogin(loginData.username);

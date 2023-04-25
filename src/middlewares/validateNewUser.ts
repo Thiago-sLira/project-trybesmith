@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import Joi from 'joi';
 import { User } from '../types/trybesmith.types';
-import statusCodes from '../statusCodes';
+import statusCodes from '../utils/statusCodes';
 
 const validateNewUserBody = (userBody: User) => (
   Joi.object({

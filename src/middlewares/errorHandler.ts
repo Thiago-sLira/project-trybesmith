@@ -1,6 +1,6 @@
 import { ErrorRequestHandler } from 'express';
 import { TokenExpiredError, JsonWebTokenError } from 'jsonwebtoken';
-import ErrorLaunch from '../controllers/utils/ErrorLaunch';
+import ErrorLaunch from '../utils/ErrorLaunch';
 
 const errorHandler: ErrorRequestHandler = (err: Error, _req, res, _next) => {
   if (err instanceof ErrorLaunch) {

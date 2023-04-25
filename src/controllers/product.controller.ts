@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import statusCodes from '../statusCodes';
 import productsService from '../services/product.service';
+import statusCodes from '../utils/statusCodes';
 
 async function registerNewProduct(req: Request, res: Response) {
   const newProduct = req.body;

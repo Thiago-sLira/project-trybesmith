@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import statusCodes from '../statusCodes';
 import usersService from '../services/user.service';
+import statusCodes from '../utils/statusCodes';
 
 async function registerNewUser(req: Request, res: Response) {
   const newUser = req.body;

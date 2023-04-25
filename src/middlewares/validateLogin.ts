@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import statusCodes from '../statusCodes';
+import statusCodes from '../utils/statusCodes';
 
 export default function validateLogin(req: Request, res: Response, next: NextFunction) {
   const { username, password } = req.body;

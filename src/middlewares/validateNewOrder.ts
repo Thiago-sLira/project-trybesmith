@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import Joi from 'joi';
 import { Product } from '../types/trybesmith.types';
-import statusCodes from '../statusCodes';
+import statusCodes from '../utils/statusCodes';
 
 const validateNewOrderBody = (productBody: Product) => (
   Joi.object({

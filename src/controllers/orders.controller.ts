@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import statusCodes from '../statusCodes';
 import ordersService from '../services/orders.service';
+import statusCodes from '../utils/statusCodes';
 
 async function getAllOrders(_req: Request, res: Response) {
   const allOrders = await ordersService.getAllOrders();

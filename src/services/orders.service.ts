@@ -1,5 +1,5 @@
-import camelize from '../controllers/utils/camelize';
 import ordersModel from '../models/orders.model';
+import camelize from '../utils/camelize';
 
 async function getAllOrders() {
   const allProducts = await ordersModel.getAllOrders();

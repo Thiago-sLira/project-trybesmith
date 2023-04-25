@@ -1,6 +1,6 @@
 import { User } from '../types/trybesmith.types';
 import usersModel from '../models/user.model';
-import { createTokenJWT } from '../auth/jwt';
+import { createTokenJWT } from '../utils/auth/jwt';
 
 async function registerNewUser(newUser: User): Promise<string> {
   const userRegistered = await usersModel.registerNewUser(newUser);

@@ -1,5 +1,5 @@
 import jwt, { SignOptions } from 'jsonwebtoken';
-import { User, UserLogin } from '../types/trybesmith.types';
+import { User, UserLogin } from '../../types/trybesmith.types';
 
 const secret = 'process.env.JWT_SECRET';
 
