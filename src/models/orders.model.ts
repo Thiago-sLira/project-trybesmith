@@ -19,6 +19,11 @@ async function getAllOrders(): Promise<AllOrders[]> {
   return result as AllOrders[];
 }
 
+async function registerNewOrder() {
+  
+}
+
 export default {
   getAllOrders,
+  registerNewOrder,
 };

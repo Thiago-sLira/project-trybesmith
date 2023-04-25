@@ -9,6 +9,11 @@ async function getAllOrders() {
   return allProductsCamelized;
 }
 
+async function registerNewOrder() {
+  
+}
+
 export default {
   getAllOrders,
+  registerNewOrder,
 };

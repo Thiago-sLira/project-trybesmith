@@ -7,6 +7,11 @@ async function getAllOrders(_req: Request, res: Response) {
   res.status(statusCodes.OK).json(allOrders);
 }
 
+async function registerNewOrder(req: Request, res: Response) {
+  
+}
+
 export default {
   getAllOrders,
+  registerNewOrder,
 };
