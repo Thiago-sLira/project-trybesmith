@@ -9,7 +9,7 @@ async function getAllOrders() {
   return allProductsCamelized;
 }
 
-async function registerNewOrder() {
+async function registerNewOrder(id, ordersToRegister) {
   
 }
 

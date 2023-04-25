@@ -7,8 +7,12 @@ async function getAllOrders(_req: Request, res: Response) {
   res.status(statusCodes.OK).json(allOrders);
 }
 
-async function registerNewOrder(req: Request, res: Response) {
-  
+async function registerNewOrder(req: Request & { user?: number }, res: Response) {
+  const ordersToRegister = req.body;
+  const id = req.user || 0;
+
+  const ordersRegistered = await ordersService.registerNewOrder(id, ordersToRegister);
+  res.status(statusCodes.OK).json(ordersRegistered);
 }
 
 export default {

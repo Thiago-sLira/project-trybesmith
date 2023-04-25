@@ -33,3 +33,7 @@ export type UserLogin = {
   id: number | undefined,
   username: string | undefined,
 };
+
+export type OrderRegister = {
+  productsIds: number[],
+};
